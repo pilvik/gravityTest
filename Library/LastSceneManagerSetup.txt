@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/newtest.unity
+- path: Assets/Scenes/markoLevelsVer1.unity
   isLoaded: 1
   isActive: 1
