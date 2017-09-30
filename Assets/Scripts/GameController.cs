@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -17,7 +18,8 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        c.levelSelect.Level1();
+		Screen.sleepTimeout = SleepTimeout.NeverSleep;
+        //c.levelSelect.Level1();
         c.pauseC.PauseGame();
         StartCoroutine(Countdown());
     }
@@ -52,4 +54,8 @@ public class GameController : MonoBehaviour
         data.blueGO2.SetActive(false);
         data.blueGO3.SetActive(false);
     }
+
+	public void ResetGame() {
+		SceneManager.LoadScene (SceneManager.GetActiveScene().name);
+	}
 }

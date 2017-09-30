@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/newtest.unity
     guid: 77138e96489eb440a8c97091f9248b65
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/markoLevelsVer1.unity
     guid: 1c023cdc76678cd41be707d65284dcaa
+  - enabled: 1
+    path: Assets/Scenes/ChrisLevel.unity
+    guid: fdae1350aec9746cc903319c216f7c7d
