@@ -67,6 +67,7 @@ public class Alien : MonoBehaviour {
 		animator.SetBool ("Dancing", isDancing);
 		animator.SetBool ("Idle", !isDancing);
 		animator.SetBool ("Mad", false);
+		player.score++;
 	}
 
 	void StopDancing() {

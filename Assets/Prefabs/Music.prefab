@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d84fc7290502245a8ad79b41edd53312, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: 62e2b1149383e4044bcf92d3d88fcfa8, type: 3}
+  clip: {fileID: 8300000, guid: 4cd9e4380bdb54dec9599cb0f9aabea7, type: 3}
   timer: 0
   coolDownTime: 3
-  color: {r: 0, g: 0, b: 0, a: 0}
+  color: {r: 0.94482756, g: 1, b: 0, a: 1}
   canPickup: 1

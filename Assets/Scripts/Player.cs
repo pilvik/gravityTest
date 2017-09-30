@@ -9,6 +9,7 @@ public class Player : MonoBehaviour {
 	public bool isPlaying;
 	bool gameOver = false;
 	bool timingOut;
+	public int score;
 	AudioSource speaker;
 	Light playerLight;
 	Animator animator;
@@ -63,7 +64,7 @@ public class Player : MonoBehaviour {
 			StartCoroutine (MusicTimeout (music.timer));
 	}
 
-	void StopMusic() {
+	public void StopMusic() {
 		isPlaying = false;
 		speaker.Stop ();
 		particles.Stop ();
