@@ -10,6 +10,7 @@ public class Data : MonoBehaviour
     [Header("Levels")]
     public GameObject levelGO1;
     public GameObject levelGO2;
+    public GameObject levelGO3;
 
     [Header("UI")]
     public Text countDownText;

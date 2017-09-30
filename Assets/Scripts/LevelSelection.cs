@@ -21,6 +21,7 @@ public class LevelSelection : MonoBehaviour {
         data.playerGO.transform.localPosition = data.startingPosition;
         data.levelGO1.SetActive(false);
         data.levelGO2.SetActive(false);
+        data.levelGO3.SetActive(false);
         data.levelText.text = "level 0";
     }
     public void Level1()
@@ -28,6 +29,7 @@ public class LevelSelection : MonoBehaviour {
         data.playerGO.transform.localPosition = data.startingPosition;
         data.levelGO1.SetActive(true);
         data.levelGO2.SetActive(false);
+        data.levelGO3.SetActive(false);
         data.levelText.text = "level 1";
     }
     public void Level2()
@@ -35,6 +37,15 @@ public class LevelSelection : MonoBehaviour {
         data.playerGO.transform.localPosition = data.startingPosition;
         data.levelGO1.SetActive(false);
         data.levelGO2.SetActive(true);
+        data.levelGO3.SetActive(false);
         data.levelText.text = "level 2";
+    }
+    public void Level3()
+    {
+        data.playerGO.transform.localPosition = data.startingPosition;
+        data.levelGO1.SetActive(false);
+        data.levelGO2.SetActive(false);
+        data.levelGO3.SetActive(true);
+        data.levelText.text = "level 3";
     }
 }

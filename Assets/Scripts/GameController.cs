@@ -17,12 +17,12 @@ public class GameController : MonoBehaviour
 
     private void Start()
     {
-        c.levelSelect.Level0();
+        c.levelSelect.Level1();
         c.pauseC.PauseGame();
         StartCoroutine(Countdown());
     }
 
-    private IEnumerator Countdown()
+    public IEnumerator Countdown()
     {
         data.countDownText.text = "3";
         yield return new WaitForSecondsRealtime(1f);
