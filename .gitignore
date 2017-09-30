@@ -1,87 +1,32 @@
-Temp/UnityTempFile-fd6ff60a258164548bdcce47d28785f5
-
-Temp/UnityTempFile-b07b596027a594376aadcc417af4f013
-
-Temp/UnityTempFile-a6969b38a1aa14935905c4bebba77336
-
-Temp/UnityTempFile-91d3636572be34b98bcdf08c1e65eb9e
-
-Temp/UnityTempFile-87667821c0d97434393a9e59ed958bad
-
-Temp/UnityTempFile-537e19e898891465d977a0463e833798
-
-Temp/UnityTempFile-2411768f1ef6445d4b932c14332a182a
-
-Temp/UnityTempFile-20eecbe4358cc4f7299c17bf4717c522
-
-Library/EditorInstance.json
-
-Temp/UnityTempFile-03a74f52550394cd6999008b004f0acf
-
-Temp/UnityLockfile
-
-*.bakert
-
-*.bin
-
-Library/shadercompiler-UnityShaderCompiler0.log
-=======
-###
-# Unity folders and files
-###
-[Aa]ssets/AssetStoreTools*
-[Bb]uild/
-[Ll]ibrary/
-[Ll]ocal[Cc]ache/
-[Oo]bj/
-[Tt]emp/
-[Uu]nityGenerated/
-# file on crash reports
-sysinfo.txt
-# Unity3D generated meta files
-*.pidb.meta
-
-###
-# VS/MD solution and project files
-###
-[Ee]xportedObj/
-*.booproj
-*.csproj
-*.sln
-*.suo
+Temp/
+Library/
+obj/
 *.svd
-*.unityproj
-*.user
-*.userprefs
-*.pidb
-.DS_Store
 
-###
-# OS generated
-###
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
-/Assets/Models/Materials/No Name.mat
-/Assets/Models/Materials/No Name.mat.meta
+!Library/*.asset
+!Library/AssetImportState
+!Library/AssetVersioning.db
+!Library/BuildPlayer.prefs
+!Library/ScriptMapper
+!Library/assetservercachev3
+!Library/expandedItems
+!Library/guidmapper
+!Library/unity default resources
+!Library/unity editor resources
 
-Library/assetDatabase3
 
-Library/assetDatabase3
 
-Library/ScriptAssemblies/BuiltinAssemblies.stamp
-
-Library/EditorUserSettings.asset
-
-Library/metadata/75/755e0041d511541549ac59f3bf0dec46
-
-Library/metadata/75/755e0041d511541549ac59f3bf0dec46
-
-Library/ScriptAssemblies/Assembly-CSharp.dll
-
-Library/InspectorExpandedItems.asset
+/Project/Project.userprefs
+/Project/Assembly-CSharp.csproj
+/Project/Assembly-CSharp.pidb
+/Project/Assembly-CSharp-Editor.csproj
+/Project/Assembly-CSharp-Editor.pidb
+/Project/Assembly-CSharp-Editor-vs.csproj
+/Project/Assembly-CSharp-firstpass.csproj
+/Project/Assembly-CSharp-firstpass.pidb
+/Project/Assembly-CSharp-firstpass-vs.csproj
+/Project/Assembly-CSharp-vs.csproj
+/Project/Assembly-UnityScript-firstpass.pidb
+/Project/Assembly-UnityScript-firstpass.unityproj
+/Project/Assembly-UnityScript-firstpass-vs.unityproj
+/Project/Project.suo
