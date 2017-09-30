@@ -38,13 +38,16 @@ public class Alien : MonoBehaviour {
 						return;
 					}
 					StartDancing ();
-				} else {
+				} else { //Wrong Music
 					ResetTimedStart ();
 					hearingGoodMusic = false;
-					print ("Un Happy"); //TODO: Doesn't like music animation
+					StopDancing ();
+					animator.SetBool ("Mad", true);
+					animator.SetBool ("Idle", false);
 				}
-			} else { 
-				animator.SetBool ("Dancing", false);
+
+			} else { //Out of range
+				StopDancing ();
 				hearingGoodMusic = false;
 				ResetTimedStart ();
 			}
@@ -63,6 +66,8 @@ public class Alien : MonoBehaviour {
 	void StartDancing() {
 		isDancing = true;
 		animator.SetBool ("Dancing", isDancing);
+		animator.SetBool ("Idle", !isDancing);
+		animator.SetBool ("Mad", false);
 		if (danceTimer > 0)
 			StartCoroutine (TimeoutDance (danceTimer));
 	}
@@ -70,6 +75,8 @@ public class Alien : MonoBehaviour {
 	void StopDancing() {
 		isDancing = false;
 		animator.SetBool ("Dancing", isDancing);
+		animator.SetBool ("Idle", !isDancing);
+		animator.SetBool ("Mad", false);
 	}
 
 	void ResetTimedStart() {
