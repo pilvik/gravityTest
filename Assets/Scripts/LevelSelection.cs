@@ -45,7 +45,7 @@ public class LevelSelection : MonoBehaviour {
         data.playerGO.transform.localPosition = data.startingPosition;
         data.levelGO1.SetActive(false);
         data.levelGO2.SetActive(false);
-        data.levelGO3.SetActive(false);
+        data.levelGO3.SetActive(true);
         data.levelText.text = "freeform~!s";
     }
 }
