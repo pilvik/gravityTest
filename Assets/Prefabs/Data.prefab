@@ -55,4 +55,5 @@ MonoBehaviour:
   startingPosition: {x: -24.6, y: 19.1, z: 25.03}
   levelGO1: {fileID: 0}
   levelGO2: {fileID: 0}
+  countDownText: {fileID: 0}
   levelText: {fileID: 0}
