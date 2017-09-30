@@ -13,8 +13,11 @@ public class Alien : MonoBehaviour {
 	public AudioClip correctMusic;
 	private float danceTimer;
 	public float timeUntilDancing;
-	bool isDancing;
+	[HideInInspector]
+	public bool isDancing;
 	bool hearingGoodMusic;
+	Alien[] aliens;
+	int danceCounter;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +25,7 @@ public class Alien : MonoBehaviour {
 		playerObject = player.transform;
 		animator = GetComponent<Animator> ();
 		timeIcon = transform.GetChild (0).GetComponent<Image> ();
+		aliens = FindObjectsOfType<Alien> ();
 		if (timeUntilDancing == 0)
 			timeIcon.gameObject.SetActive (false); //Disable timer if it's not a timed alien
 	}
@@ -63,7 +67,17 @@ public class Alien : MonoBehaviour {
 		}
 	}
 
+	void WinGame() {
+		print ("Player Won");
+	}
+
 	void StartDancing() {
+		for (int i = 0; i >= aliens.Length; i++) {
+			if (aliens [i].isDancing)
+				danceCounter++;
+			if (danceCounter == aliens.Length)
+				WinGame ();
+		}
 		isDancing = true;
 		animator.SetBool ("Dancing", isDancing);
 		animator.SetBool ("Idle", !isDancing);

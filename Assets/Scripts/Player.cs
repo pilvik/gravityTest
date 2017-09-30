@@ -6,6 +6,7 @@ public class Player : MonoBehaviour {
 	public AudioClip currentMusic;
 	public float volume = 2;
 	public bool isPlaying;
+	bool gameOver = false;
 	AudioSource speaker;
 	Light playerLight;
 	Animator animator;
@@ -16,11 +17,13 @@ public class Player : MonoBehaviour {
 		speaker = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator> ();
 		particles = GetComponent<ParticleSystem> ();
+
 	}
 
 	//Player movent relative to gravity
 	void FixedUpdate(){
 		Physics.gravity = 60 * Input.acceleration.normalized;
+
 	}
 
 	//Collision
@@ -38,6 +41,8 @@ public class Player : MonoBehaviour {
 		currentMusic = music.clip;
 		PlayMusic (music, true);
 	}
+
+
 
 	void PlayMusic(Music music, bool play = true) {
 		isPlaying = true;
