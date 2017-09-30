@@ -56,9 +56,6 @@ public class Alien : MonoBehaviour {
 			if (distanceFromPlayer > player.volume) {
 				print ("Out of Range");
 				hearingGoodMusic = false;
-				//Out of range and dancing 
-				if (danceTimer > 0)
-					StartCoroutine (TimeoutDance (danceTimer));
 			}
 		}
 	}
@@ -69,8 +66,6 @@ public class Alien : MonoBehaviour {
 		animator.SetBool ("Dancing", isDancing);
 		animator.SetBool ("Idle", !isDancing);
 		animator.SetBool ("Mad", false);
-		if (danceTimer > 0)
-			StartCoroutine (TimeoutDance (danceTimer));
 	}
 
 	void StopDancing() {
@@ -97,18 +92,4 @@ public class Alien : MonoBehaviour {
 		}
 	}
 
-	IEnumerator TimeoutDance(float time) {
-		for (float i = 0; i <= time; i++) {
-			if (!hearingGoodMusic) {
-				yield return new WaitForSeconds (1);
-				timeIcon.fillAmount = 1 - i / time;
-				if (i >= time)
-					StopDancing ();
-			} else {
-				timeIcon.fillAmount = 0;
-				StopCoroutine (TimeoutDance (0));
-				break;
-			}
-		}
-	}
 }
