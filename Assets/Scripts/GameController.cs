@@ -39,4 +39,17 @@ public class GameController : MonoBehaviour
             c.pauseC.ContinueGame();
         }
     }
+
+    public void YellowPointCountUI()
+    {
+        data.yellowGO1.SetActive(false);
+        data.yellowGO2.SetActive(false);
+        data.yellowGO3.SetActive(false);
+    }
+    public void BluePointCountUI()
+    {
+        data.blueGO1.SetActive(false);
+        data.blueGO2.SetActive(false);
+        data.blueGO3.SetActive(false);
+    }
 }
