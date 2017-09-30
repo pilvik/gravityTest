@@ -1,4 +1,3 @@
-
 Temp/UnityTempFile-fd6ff60a258164548bdcce47d28785f5
 
 Temp/UnityTempFile-b07b596027a594376aadcc417af4f013
@@ -26,3 +25,47 @@ Temp/UnityLockfile
 *.bin
 
 Library/shadercompiler-UnityShaderCompiler0.log
+=======
+###
+# Unity folders and files
+###
+[Aa]ssets/AssetStoreTools*
+[Bb]uild/
+[Ll]ibrary/
+[Ll]ocal[Cc]ache/
+[Oo]bj/
+[Tt]emp/
+[Uu]nityGenerated/
+# file on crash reports
+sysinfo.txt
+# Unity3D generated meta files
+*.pidb.meta
+
+###
+# VS/MD solution and project files
+###
+[Ee]xportedObj/
+*.booproj
+*.csproj
+*.sln
+*.suo
+*.svd
+*.unityproj
+*.user
+*.userprefs
+*.pidb
+.DS_Store
+
+###
+# OS generated
+###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+ehthumbs.db
+Thumbs.db
+/Assets/Models/Materials/No Name.mat
+/Assets/Models/Materials/No Name.mat.meta
