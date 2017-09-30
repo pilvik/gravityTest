@@ -15,6 +15,15 @@ public class Data : MonoBehaviour
     [Header("UI")]
     public Text countDownText;
 
+    [Header("Scoreboard")]
+    public GameObject yellowGO1;
+    public GameObject yellowGO2;
+    public GameObject yellowGO3;
+
+    public GameObject blueGO1;
+    public GameObject blueGO2;
+    public GameObject blueGO3;
+
     [Header("TestUi")]
     public Text levelText;
 }
