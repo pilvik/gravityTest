@@ -14,12 +14,14 @@ public class Player : MonoBehaviour {
 	Light playerLight;
 	Animator animator;
 	ParticleSystem particles;
+	Mesh mesh;
 
 	void Awake() {
 		playerLight = GetComponent<Light> ();
 		speaker = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator> ();
 		particles = GetComponent<ParticleSystem> ();
+		mesh = transform.Find ("Body").GetComponent<Mesh>();
 	}
 
 	//Player movent relative to gravity
@@ -65,6 +67,7 @@ public class Player : MonoBehaviour {
 	}
 
 	public void StopMusic() {
+		timingOut = false;
 		isPlaying = false;
 		speaker.Stop ();
 		particles.Stop ();
@@ -75,8 +78,10 @@ public class Player : MonoBehaviour {
 	void LightOn(Color color, bool On = true) {
 		playerLight.enabled = On;
 		playerLight.color = color;
-		if (On)
+		if (On) {
 			playerLight.intensity = 15;
+			speaker.volume = 1;
+		}
 	}
 
 
@@ -84,8 +89,8 @@ public class Player : MonoBehaviour {
 		timingOut = true;
 		for (float i = 0; i <= time*4; i++) {
 			yield return new WaitForSeconds (0.25f);
-			print (1 - (i / 4) / time);
 			playerLight.intensity = (1 - (i / 4) / time)*15;
+			speaker.volume = 1-((i / 4) / time);
 			if (i >= time * 4)
 				StopMusic ();
 		}
