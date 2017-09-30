@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour {
 	public AudioClip currentMusic;
 	public float volume = 2;
 	public bool isPlaying;
 	bool gameOver = false;
+	bool timingOut;
 	AudioSource speaker;
 	Light playerLight;
 	Animator animator;
@@ -17,13 +19,11 @@ public class Player : MonoBehaviour {
 		speaker = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator> ();
 		particles = GetComponent<ParticleSystem> ();
-
 	}
 
 	//Player movent relative to gravity
 	void FixedUpdate(){
-		Physics.gravity = 60 * Input.acceleration.normalized;
-
+		Physics.gravity = 90 * Input.acceleration.normalized;
 	}
 
 	//Collision
@@ -59,7 +59,7 @@ public class Player : MonoBehaviour {
 		speaker.clip = currentMusic;
 		StopCoroutine (MusicTimeout ());
 		speaker.Play ();
-		if (music.timer > 0)
+		if (music.timer > 0 && !timingOut)
 			StartCoroutine (MusicTimeout (music.timer));
 	}
 
@@ -74,11 +74,19 @@ public class Player : MonoBehaviour {
 	void LightOn(Color color, bool On = true) {
 		playerLight.enabled = On;
 		playerLight.color = color;
+		if (On)
+			playerLight.intensity = 15;
 	}
 
 
 	IEnumerator MusicTimeout(float time = 0) {
-		yield return new WaitForSeconds (time);
-		StopMusic ();
+		timingOut = true;
+		for (float i = 0; i <= time*4; i++) {
+			yield return new WaitForSeconds (0.25f);
+			print (1 - (i / 4) / time);
+			playerLight.intensity = (1 - (i / 4) / time)*15;
+			if (i >= time * 4)
+				StopMusic ();
+		}
 	}
 }
