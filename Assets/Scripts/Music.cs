@@ -14,10 +14,12 @@ public class Music : MonoBehaviour {
 
 	public IEnumerator PickUp() {
 		if (canPickup) {
+			gameObject.SetActive (false);
 			canPickup = false;
 			print ("Picked up music");
 			yield return new WaitForSeconds (coolDownTime);
 			canPickup = true;
+			gameObject.SetActive (true);
 		}
 	}
 }
