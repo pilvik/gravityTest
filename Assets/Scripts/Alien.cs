@@ -15,7 +15,7 @@ public class Alien : MonoBehaviour {
 	public float timeUntilDancing;
 	bool isDancing;
 	bool hearingGoodMusic;
-
+	bool delayingDance;
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<Player> ();
@@ -31,13 +31,14 @@ public class Alien : MonoBehaviour {
 		if (!isDancing) {
 			distanceFromPlayer = Vector3.Distance (transform.position, playerObject.position);
 			if (distanceFromPlayer < player.volume && player.isPlaying) {
-				if (player.currentMusic == correctMusic) {
+				if (player.currentMusic == correctMusic) { 
+					//Playing the right type of music
 					hearingGoodMusic = true;
-					if (timeUntilDancing > 0) {
+					if (timeUntilDancing > 0 && !delayingDance) {
 						StartCoroutine (TimedStart (timeUntilDancing));
 						return;
-					}
-					StartDancing ();
+					} else if (timeUntilDancing == 0)
+						StartDancing ();
 				} else { //Wrong Music
 					ResetTimedStart ();
 					hearingGoodMusic = false;
@@ -61,8 +62,8 @@ public class Alien : MonoBehaviour {
 	}
 
 	void StartDancing() {
-		isDancing = true;
 		timeIcon.GetComponent<Animator> ().SetBool ("Completed", true);
+		isDancing = true;
 		animator.SetBool ("Dancing", isDancing);
 		animator.SetBool ("Idle", !isDancing);
 		animator.SetBool ("Mad", false);
@@ -78,10 +79,12 @@ public class Alien : MonoBehaviour {
 
 	void ResetTimedStart() {
 		StopCoroutine (TimedStart (0));
+		delayingDance = false;
 		timeIcon.fillAmount = 0;
 	}
 
 	IEnumerator TimedStart(float time) {
+		delayingDance = true;
 		for (float i = 0; i <= time*4; i++) {
 			if (hearingGoodMusic) {
 				yield return new WaitForSeconds (0.25f);
