@@ -27,7 +27,8 @@ public class Player : MonoBehaviour {
 	}
 
 	//Collision
-	void OnCollisionEnter(Collision collision) {
+	void OnTriggerEnter(Collider collision) {
+		print (collision.name);
 		GameObject hit = collision.gameObject;
 		//Hit music, pick it up and switch to it
 		if (hit.GetComponent<Music> () && hit.GetComponent<Music> ().canPickup) {
