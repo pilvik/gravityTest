@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    void FixedUpdate()
-    {
-        Debug.Log("Pause test");
-    }
 	
     public void PauseGame()
     {

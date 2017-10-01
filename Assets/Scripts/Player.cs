@@ -17,18 +17,29 @@ public class Player : MonoBehaviour {
 	Animator animator;
 	ParticleSystem particles;
 	Mesh mesh;
+	public int AlienCount;
+	Alien[] aliens;
+	float time;
+	public bool gameEnded;
+	Image gameOut;
 
 	void Awake() {
+		gameOut = GameObject.Find ("BlackOut").GetComponent<Image> ();
+		aliens = FindObjectsOfType<Alien> ();
+		AlienCount = aliens.Length;
 		playerLight = GetComponent<Light> ();
 		speaker = GetComponent<AudioSource> ();
 		animator = GetComponent<Animator> ();
 		particles = GetComponent<ParticleSystem> ();
 		mesh = transform.Find ("Body").GetComponent<Mesh>();
+		gameOut.CrossFadeAlpha (0, 0, false);
 	}
 
 	//Player movent relative to gravity
 	void FixedUpdate(){
-		Physics.gravity = 90 * Input.acceleration.normalized;
+		Physics.gravity = 30 * Input.acceleration.normalized;
+		if (score >= AlienCount && !gameEnded)
+			GameOver ();
 	}
 
 	//Collision
@@ -84,6 +95,12 @@ public class Player : MonoBehaviour {
 		}
 	}
 
+	void GameOver() {
+		print ("GameOver");
+		gameEnded = true;
+		gameOut.CrossFadeAlpha (1, 1, false);
+		gameOut.transform.GetChild (0).GetComponent<Text> ().text = "Level Completed in " + Time.timeSinceLevelLoad + " seconds!";
+	}
 
 	IEnumerator MusicTimeout(float time = 0) {
 		timingOut = true;

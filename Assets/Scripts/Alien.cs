@@ -56,7 +56,6 @@ public class Alien : MonoBehaviour {
 		} else {
 			distanceFromPlayer = Vector3.Distance (transform.position, playerObject.position);
 			if (distanceFromPlayer > player.volume) {
-				print ("Out of Range");
 				hearingGoodMusic = false;
 			}
 		}
@@ -68,6 +67,7 @@ public class Alien : MonoBehaviour {
 		animator.SetBool ("Dancing", isDancing);
 		animator.SetBool ("Idle", !isDancing);
 		animator.SetBool ("Mad", false);
+		player.score++;
 		if (isYellow)
 			player.yellowAlienPoint++;
 		else
