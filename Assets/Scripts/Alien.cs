@@ -16,6 +16,7 @@ public class Alien : MonoBehaviour {
 	bool isDancing;
 	bool hearingGoodMusic;
 	bool delayingDance;
+	public bool isYellow;
 	// Use this for initialization
 	void Start () {
 		player = FindObjectOfType<Player> ();
@@ -67,7 +68,10 @@ public class Alien : MonoBehaviour {
 		animator.SetBool ("Dancing", isDancing);
 		animator.SetBool ("Idle", !isDancing);
 		animator.SetBool ("Mad", false);
-		player.score++;
+		if (isYellow)
+			player.yellowAlienPoint++;
+		else
+			player.blueAlienPoint++;
 	}
 
 	void StopDancing() {

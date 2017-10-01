@@ -48,21 +48,6 @@ public class Player : MonoBehaviour {
 		PlayMusic (music, true);
 	}
 
-    void CheckWhatClipIsplaying()
-    {
-        string soundClipName = currentMusic.ToString();
-        if (soundClipName == "EpicFilmSpace")
-        {
-            yellowAlienPoint++;
-            Debug.Log("yellow alien points");
-        }
-        if (soundClipName == "TheCheezyFunkTune")
-        {
-            Debug.Log("blue alien points");
-            blueAlienPoint++;
-        }
-    }
-
 	void PlayMusic(Music music, bool play = true) {
 		isPlaying = true;
 		//Update Light and Animator
