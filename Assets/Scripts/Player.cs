@@ -10,6 +10,8 @@ public class Player : MonoBehaviour {
 	bool gameOver = false;
 	bool timingOut;
 	public int score;
+    public int yellowAlienPoint;
+    public int blueAlienPoint;
 	AudioSource speaker;
 	Light playerLight;
 	Animator animator;
@@ -46,7 +48,20 @@ public class Player : MonoBehaviour {
 		PlayMusic (music, true);
 	}
 
-
+    void CheckWhatClipIsplaying()
+    {
+        string soundClipName = currentMusic.ToString();
+        if (soundClipName == "EpicFilmSpace")
+        {
+            yellowAlienPoint++;
+            Debug.Log("yellow alien points");
+        }
+        if (soundClipName == "TheCheezyFunkTune")
+        {
+            Debug.Log("blue alien points");
+            blueAlienPoint++;
+        }
+    }
 
 	void PlayMusic(Music music, bool play = true) {
 		isPlaying = true;
