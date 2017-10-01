@@ -100,6 +100,7 @@ public class Player : MonoBehaviour {
 		gameEnded = true;
 		gameOut.CrossFadeAlpha (1, 1, false);
 		gameOut.transform.GetChild (0).GetComponent<Text> ().text = "Level Completed in " + Time.timeSinceLevelLoad + " seconds!";
+		Time.timeScale = 0;
 	}
 
 	IEnumerator MusicTimeout(float time = 0) {
