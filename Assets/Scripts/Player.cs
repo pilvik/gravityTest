@@ -98,7 +98,7 @@ public class Player : MonoBehaviour {
 	void GameOver() {
 		print ("GameOver");
 		gameEnded = true;
-		gameOut.CrossFadeAlpha (1, 1, false);
+		gameOut.CrossFadeAlpha (1, 1, true);
 		gameOut.transform.GetChild (0).GetComponent<Text> ().text = "Level Completed in " + Time.timeSinceLevelLoad + " seconds!";
 		Time.timeScale = 0;
 	}
